@@ -10,7 +10,7 @@ async function connectToDatabase() {
     await client.connect();
     const db = client.db(dbName);
     const tweetCollection = db.collection(collectionName);
-    return { tweetCollection, client };
+    return { tweetCollection, client, db };
   } catch (error) {
     console.error('Failed to connect to the database:', error);
     throw error;
